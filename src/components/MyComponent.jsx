@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { newContextComponents } from "@drizzle/react-components"
+import { ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css"
 const { AccountData, ContractData, ContractForm } = newContextComponents
 class MyComponent extends Component {
     render() {
@@ -7,6 +9,7 @@ class MyComponent extends Component {
 
             <div>
                 <h2>取得帳戶餘額</h2>
+                <ToastContainer ></ToastContainer>
                 <AccountData
                     drizzle={this.props.drizzle}
                     drizzleState={this.props.drizzleState}
@@ -20,6 +23,7 @@ class MyComponent extends Component {
                     drizzle={this.props.drizzle}
                     drizzleState={this.props.drizzleState}
                     method="getData"
+
                 ></ContractData>
                 <h2>呼叫合約的交易</h2>
                 <ContractForm

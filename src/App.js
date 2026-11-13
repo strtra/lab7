@@ -4,8 +4,9 @@ import { DrizzleContext } from "@drizzle/react-plugin"
 import './App.css';
 import Container from './components/Container';
 import MyComponent from './components/MyComponent';
-const drizzleStore = generateStore(drizzleOptions)
-const drizzle = new Drizzle(drizzleOptions, drizzleStore)
+import store from "./middleware"
+//const drizzleStore = generateStore(drizzleOptions)
+const drizzle = new Drizzle(drizzleOptions, store)
 function App() {
   return (
     <DrizzleContext.Provider drizzle={drizzle}>
