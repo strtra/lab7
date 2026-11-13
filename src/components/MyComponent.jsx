@@ -14,6 +14,21 @@ class MyComponent extends Component {
                     units={"ether"}
                     precision={6}
                 ></AccountData>
+                <h2>呼叫合約(唯讀)</h2>
+                <ContractData
+                    contract="Storage"
+                    drizzle={this.props.drizzle}
+                    drizzleState={this.props.drizzleState}
+                    method="getData"
+                ></ContractData>
+                <h2>呼叫合約的交易</h2>
+                <ContractForm
+                    contract="Storage"
+                    drizzle={this.props.drizzle}
+                    drizzleState={this.props.drizzleState}
+                    method="setData"
+                    labels={["設定新的合約變數值"]}
+                ></ContractForm>
             </div>
 
         )
